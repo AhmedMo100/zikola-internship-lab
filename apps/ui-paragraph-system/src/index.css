@@ -1,0 +1,54 @@
+/* ─── TAILWIND ENGINE INITIALIZATION ─── */
+@import "tailwindcss";
+
+/* Force Tailwind v4 to scan the external UI Package */
+@source "../../../packages/ui/src/**/*.{ts,tsx}";
+
+/* ─── TAILWIND V4 CUSTOM THEME CONFIGURATION ─── */
+@theme {
+  --color-brand-dark: #09090b;       /* Brand Dark Black */
+  
+  --color-brand-orange: #ff7300;     /* New: Light Soft Orange */
+  --color-brand-yellow: #ffb700;     /* New: Soft Warm Yellow */
+  
+  --color-brand-muted: #71717a;      /* Brand Muted Gray */
+  --color-brand-border: #27272a;     /* Brand Dark Border */
+  --color-brand-bg-light: #fafafa;   /* Brand Light Background */
+}
+
+/* ─── GLOBAL BASE RESET ─── */
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-brand-dark);
+  background-color: #ffffff;
+  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── CUSTOM BRAND UTILITIES ─── */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand-orange) 0%, var(--color-brand-yellow) 100%);
+}
+
+.text-brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand-orange) 10%, var(--color-brand-yellow) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
