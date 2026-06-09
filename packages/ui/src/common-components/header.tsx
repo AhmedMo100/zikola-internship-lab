@@ -23,7 +23,7 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
             <Component
                 ref={ref}
                 className={cn(
-                    "w-full bg-white px-6 py-8 sticky top-0 z-50 border-b border-gray-800 flex items-center justify-center transition-all",
+                    "w-full bg-white px-6 py-8 sticky top-0 z-50 border-gray-800 flex items-center justify-center transition-all",
                     className
                 )}
                 {...props}
