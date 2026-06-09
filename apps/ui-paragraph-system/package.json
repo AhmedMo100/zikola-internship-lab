@@ -1,5 +1,5 @@
 {
-  "name": "my-react-app",
+  "name": "@zikola/ui-paragraph-system",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.5",
+    "@zikola/ui": "workspace:^",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "react": "^19.2.6",
