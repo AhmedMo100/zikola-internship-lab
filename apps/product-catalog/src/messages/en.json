@@ -1,0 +1,32 @@
+{
+    "Navigation": {
+        "brand": "Zikola Internship Lab",
+        "toggle": "Arabic",
+        "home": "Home",
+        "products": "Products",
+        "status": "Internship Task"
+    },
+    "HomePage": {
+        "title": "Product Catalog with Next.js App Router",
+        "description": "This training project demonstrates how to build a modern product catalog using the Next.js App Router. It focuses on nested layouts, dynamic routing, loading states, error boundaries, custom not-found pages, and reusable UI components following production-ready best practices.",
+        "exploreTitle": "Explore the Product Catalog",
+        "exploreDesc": "Browse the products list, navigate to dynamic product details pages, and experience loading skeletons, route-level error handling, and responsive layouts powered by the App Router.",
+        "button": "Browse Products →",
+        "features": {
+            "title": "Task Objectives",
+            "feat1_title": "Nested Layouts",
+            "feat1_desc": "Build a dedicated layout for the products section to provide a consistent user experience across all nested routes.",
+            "feat2_title": "Loading & Error Handling",
+            "feat2_desc": "Implement route-level loading states, reusable skeleton components, error boundaries, and custom not-found pages.",
+            "feat3_title": "Dynamic Product Details",
+            "feat3_desc": "Create dynamic product pages using route parameters while handling invalid or missing products gracefully."
+        },
+        "technicalStack": {
+            "title": "Tech Stack",
+            "framework": "Next.js App Router",
+            "language": "TypeScript",
+            "styling": "Tailwind CSS",
+            "workspace": "Turborepo Monorepo"
+        }
+    }
+}
