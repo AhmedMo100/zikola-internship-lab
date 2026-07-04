@@ -1,0 +1,69 @@
+/* ─── 1. EXTERNAL REMOTE IMPORTS MUST BE FIRST ─── */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ─── 2. TAILWIND ENGINE INITIALIZATION ─── */
+@import "tailwindcss";
+
+/* Force Tailwind v4 to scan the external UI Package */
+@source "../../../packages/ui/src/**/*.{ts,tsx}";
+
+/* ─── 3. TAILWIND V4 CUSTOM THEME CONFIGURATION ─── */
+@theme {
+  --color-brand-dark: #09090b;       /* Brand Dark Black */
+  
+  --color-brand-orange: #ff7300;     /* New: Light Soft Orange */
+  --color-brand-yellow: #ffb700;     /* New: Soft Warm Yellow */
+  
+  --color-brand-muted: #71717a;      /* Brand Muted Gray */
+  --color-brand-border: #27272a;     /* Brand Dark Border */
+  --color-brand-bg-light: #fafafa;   /* Brand Light Background */
+
+  /* Font Family Variable Mapping inside Tailwind v4 Theme Engine */
+  --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-cairo: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─── 4. GLOBAL BASE RESET ─── */
+:root {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-brand-dark);
+  background-color: #ffffff;
+  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* ─── 5. AUTOMATED SEAMLESS LANGUAGE TYPOGRAPHY ROUTING ─── */
+:root, [lang="en"] {
+  font-family: var(--font-inter);
+}
+
+[lang="ar"] {
+  font-family: var(--font-cairo);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── 6. CUSTOM BRAND UTILITIES ─── */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand-orange) 0%, var(--color-brand-yellow) 100%);
+}
+
+.text-brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand-orange) 10%, var(--color-brand-yellow) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
