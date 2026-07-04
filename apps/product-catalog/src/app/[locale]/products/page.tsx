@@ -48,6 +48,7 @@ export default function ProductsPage({ params }: ProductsPageProps) {
     });
 
     // Extracting uniquely mapped categories from our data to pass into the sidebar dynamically
+    // In a real system, you might have a dedicated API route for this, or extract it from total counts
     const staticCategoriesPool = locale === "ar"
         ? ["إكسسوارات", "شاشات", "صوتيات", "أثاث"]
         : ["accessories", "screens", "audio", "furniture"];

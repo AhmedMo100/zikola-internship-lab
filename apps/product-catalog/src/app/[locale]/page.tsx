@@ -2,6 +2,7 @@
  * @file-preview Primary landing homepage leveraging strict next-intl server translation dictionaries to support deep multi-lingual rendering.
  */
 
+import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server"; // IMPORT FROM /server
