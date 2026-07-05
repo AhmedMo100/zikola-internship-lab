@@ -19,9 +19,9 @@
     "turbo": "^2.9.16",
     "typescript": "5.9.2"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.15.0",
   "engines": {
-    "node": ">=18"
+    "node": "22.x"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

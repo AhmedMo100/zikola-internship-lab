@@ -4,12 +4,53 @@
 
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server"; // IMPORT FROM /server
 import { Hero } from "@zikola/ui";
 
 interface HomePageProps {
   /** Asynchronous route parameters provided automatically by Next.js dynamic language segment */
   params: Promise<{ locale: string }>;
+}
+
+/**
+ * ─── STATIC METADATA GENERATOR ───
+ * Dynamically builds Open Graph and Twitter Card context targeting the landing segment using translated dictionary keys.
+ */
+export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations("HomePage");
+  
+  // Base deployment tracking host url (fallback to Vercel workspace defaults)
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zikola-internship-lab.vercel.app";
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    metadataBase: new URL(baseUrl),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${baseUrl}/${locale}`,
+      siteName: "Zikola DentalOps",
+      type: "website",
+      locale: locale === "ar" ? "ar_EG" : "en_US",
+      images: [
+        {
+          url: "/images/og-default-preview.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Zikola Architecture Platform Cover Preview",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/images/og-default-preview.jpg"],
+    },
+  };
 }
 
 /**
